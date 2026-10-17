@@ -3,7 +3,11 @@ const messageElement = document.getElementById("message");
 var counter = 10;
 loadCount();
 
-
+document.getElementById("btnPlus").addEventListener("click",increaseCount)
+document.getElementById("btnMinus").addEventListener("click",decreaseCount)
+document.getElementById("btnReset").addEventListener("click",resetCount)
+document.getElementById("btnSave").addEventListener("click",saveCount)
+document.getElementById("btnLoad").addEventListener("click",loadCount)
 
 function showMessage(text){
     messageElement.innerHTML = text;
