@@ -1,0 +1,44 @@
+{
+	"articles": [
+		{
+			"id": 1,
+			"slug": "building-better-habits",
+			"title": "Building Better Habits, One Step at a Time",
+			"excerpt": "Small, consistent actions can make meaningful changes feel achievable.",
+			"content": "Start with a simple goal, make it easy to repeat, and track your progress. Over time, small actions can become lasting habits.",
+			"author": "Maya Chen",
+			"category": "Lifestyle",
+			"tags": ["habits", "wellness", "personal growth"],
+			"publishedAt": "2025-01-14T09:00:00Z",
+			"readTimeMinutes": 4,
+			"image": "https://example.com/images/better-habits.jpg"
+		},
+		{
+			"id": 2,
+			"slug": "beginner-weekend-hiking",
+			"title": "A Beginner's Guide to Weekend Hiking",
+			"excerpt": "Plan a comfortable day outdoors with a few essentials and a little preparation.",
+			"content": "Choose a route that matches your experience, check the forecast, and bring water, snacks, and a basic first-aid kit. Leave no trace and let someone know your plans.",
+			"author": "Jordan Rivera",
+			"category": "Travel",
+			"tags": ["hiking", "outdoors", "weekends"],
+			"publishedAt": "2025-02-02T12:30:00Z",
+			"readTimeMinutes": 6,
+			"image": "https://example.com/images/weekend-hiking.jpg"
+		},
+		{
+			"id": 3,
+			"slug": "better-coffee-at-home",
+			"title": "Making Better Coffee at Home",
+			"excerpt": "A few thoughtful adjustments can improve your everyday cup of coffee.",
+			"content": "Use freshly ground beans, clean equipment, and water just off the boil. Experiment with the coffee-to-water ratio and grind size until you find a balance you enjoy.",
+			"author": "Alex Morgan",
+			"category": "Food & Drink",
+			"tags": ["coffee", "how-to", "home"],
+			"publishedAt": "2025-02-18T08:15:00Z",
+			"readTimeMinutes": 5,
+			"image": "https://example.com/images/home-coffee.jpg"
+		}
+	]
+}
+ 
