@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*******************Common******************/
+.container {
+    margin-inline: 120px;
+}
+ul{
+    list-style-type:none;
+}
+
+@media (max-width:600px) {
+    .container {
+        margin-inline: 30px;
+    }
+}
