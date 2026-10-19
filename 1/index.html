@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    
+    <div class="chaser"></div>
     <header class="header container">
         <nav class="nav">
             <div class="nav-title">
@@ -193,6 +195,15 @@
     </section>
 
     <div class="bar"></div>
+    <script>
+        window.onload = function(){
+            window.addEventListener('mousemove', (e) => {
+  // تحديث قيم المتغيرات داخل CSS بقيم إحداثيات الماوس الحالية
+  document.documentElement.style.setProperty('--x', e.clientX + 'px');
+  document.documentElement.style.setProperty('--y', e.clientY + 'px');
+});
+        }
+    </script>
 </body>
 
 </html>

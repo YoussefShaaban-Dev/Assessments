@@ -404,3 +404,27 @@ td:has(i.fa-times) {
     color: #935cf8;
     font-size: 1.5rem;
 }
+
+
+
+
+
+.chaser {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: #ff006a;
+  border-radius: 50%;
+  pointer-events: none; /* تمنع العنصر من حجب نقرات الماوس */
+  
+  /* نقل العنصر إلى منتصف مؤشر الماوس */
+  transform: translate(-50%, -50%);
+  
+  /* ربط حركة العنصر بالمتغيرات المخصصة */
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  
+  /* إضافة تأثير تأخير (اللحاق مطاطي وسلس) */
+  transition: left 0.3s cubic-bezier(0.075, 0.82, 0.165, 1), top 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 1000;
+}
