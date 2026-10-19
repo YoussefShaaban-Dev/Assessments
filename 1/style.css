@@ -198,6 +198,22 @@ p {
 }
 
 
+.bar{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    transform-origin: left;
+    animation: fill linear;
+    animation-timeline: scroll();
+    height: 3px;
+    background: linear-gradient(50deg ,#935cf8,#5a33a1,#935cf8);
+}
+
+@keyframes fill {
+    from { transform:scalex(0);}
+    to{transform: scalex(1);}
+}
+
 
 
 /************* Main Section *************/
