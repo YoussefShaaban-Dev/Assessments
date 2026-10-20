@@ -2,9 +2,11 @@
     columns: light dark;
     --light-bg: #eee;
     --light-color: #1f1f1f;
+    --light-b-color: #1f1f1f46;
 
     --dark-bg: #1f1f1f;
     --dark-color: #eee;
+    --dark-b-color: #eeeeee46;
 
     --grad: linear-gradient(140deg, #8518b8, #421399);
     --trans: all 0.3s ease-in-out;
@@ -86,7 +88,7 @@ main {
 .panel {
     padding: 10px;
     border-radius: 6px;
-    box-shadow: 0px 0px 10px #1f1f1f54;
+    box-shadow: 0px 0px 10px #00000054;
     min-width: 500px;
 }
 
@@ -135,7 +137,7 @@ i.fa-times:hover {
 }
 
 .btn-check, li.item div{
-    border: solid 1px #1f1f1f;
+    border: solid 1px light-dark(var(--light-b-color),var(--dark-b-color));
     border-radius: 50px;
     align-content: center;
     padding: 2px;
@@ -153,12 +155,18 @@ i.fa-times:hover {
 .btn-check i , li.item div i{
     font-size: 1rem;
     color: #eee;
+    opacity: 0;
 }
 
 .btn-check.checked, li.item.checked div{
     border: none;
     background-image: var(--grad);
     margin: 1px;
+}
+
+
+.btn-check.checked i, li.item.checked div i{
+    opacity: 1;
 }
 
 .items-list{
@@ -182,7 +190,7 @@ li.item.checked div, li.item.checked div i{
 
 li.item{
     padding: 10px 20px;
-    border-bottom: solid 1px #1f1f1f46;
+    border-bottom: solid 1px light-dark(var(--light-b-color),var(--dark-b-color));
     transition: var(--trans);
 }
 
@@ -201,4 +209,15 @@ li.item > i{
 
 li.item:hover > i{
     opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .panel{
+        min-width: 80vw;
+        width: stretch;
+        margin-inline: 15px;
+    }
+    input[type=text]{
+        min-width: 60vw;
+    }
 }

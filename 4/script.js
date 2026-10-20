@@ -12,16 +12,23 @@ loadData();
         if (event.code == "Enter")
             addItem()
 
-        alert(event.code)
+        alert(JSON.stringify(event))
     });
 
-    const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-    if (darkModeMql && darkModeMql.matches) {
-        isDark = true;
-    } else {
-        isDark = false
+    /* Get Dark mode */
+    const savedDarkMode = localStorage.getItem("dark-mode")
+    console.log(savedDarkMode)
+    if (savedDarkMode) {
+        isDark = savedDarkMode == 1;
     }
-
+    else {
+        const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+        if (darkModeMql && darkModeMql.matches)
+            isDark = false;
+        else
+            isDark = true
+    }
+    switchLightDark()
 })()
 
 function displayListItems() {
@@ -102,4 +109,14 @@ function completeItem(index) {
         item.checked = true;
         displayListItems();
     }
+}
+
+function switchLightDark(value = null) {
+    if (value != null)
+        isDark = value
+    else
+        isDark = !isDark;
+
+    document.body.style.colorScheme = isDark ? "dark" : "light"
+    localStorage.setItem("dark-mode", (isDark?2:1))
 }
