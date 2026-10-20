@@ -49,6 +49,18 @@
             </div>
         </div>
     </main>
+    <div id="popupContainer" class="popup-container hidden">
+        <div class="popup-card">
+            <div class="popup-header">
+                <div></div><i class="fa fa-times"  onclick="cancelPopup()"></i>
+            </div>
+            <p id="popupMessage">Dummey Message per</p>
+            <div class="popup-footer">
+                <button class="btn2 btn-confirm" onclick="confirmPopup()">Confirm</button>
+                <button class="btn2 btn-cancel" onclick="cancelPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
     <p id="message"></p>
     <script src="script.js" defer></script>
 </body>

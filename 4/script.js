@@ -1,11 +1,14 @@
 const listElement = document.getElementById("list")
 const messageElement = document.getElementById("message")
+const popupMessageElement = document.getElementById("popupMessage")
+const popupContainerElement = document.getElementById("popupContainer")
 const txtItemElement = document.getElementById("txtItem")
 const newItemCheckElement = document.getElementById("newItemCheck");
 const leftCountElement = document.getElementById("leftCount");
 var listItems = [];
 var newItemChecked = false;
 let isDark = false;
+let popupCallBack;
 loadData();
 
 (function () {
@@ -66,8 +69,10 @@ function loadData() {
 }
 
 function clearAll() {
-    listItems = []
-    displayListItems()
+    showPopup("Do you want to clear all items?", () => {
+        listItems = []
+        displayListItems()
+    })
 }
 
 
@@ -150,6 +155,27 @@ function clearNewItem() {
 }
 
 function clearCompleted() {
-    listItems = listItems.filter((x) => !x.checked);
-    displayListItems();
+    showPopup("Do you want to clear completed items?", () => {
+        listItems = listItems.filter((x) => !x.checked);
+        displayListItems();
+    })
+}
+
+function showPopup(message, callback) {
+    popupMessageElement.innerHTML = message;
+    popupContainerElement.classList.remove("hidden");
+    popupCallBack = callback;
+}
+
+function cancelPopup() {
+    popupCallBack = undefined;
+    popupContainerElement.classList.add("hidden");
+}
+
+function confirmPopup() {
+    if (popupCallBack && typeof popupCallBack == "function")
+        popupCallBack();
+
+    popupCallBack = undefined;
+    popupContainerElement.classList.add("hidden");
 }
