@@ -121,21 +121,6 @@ function switchLightDark(value = null) {
     localStorage.setItem("dark-mode", (isDark ? 2 : 1))
 }
 
-function showAll() {
-    listElement.classList.remove("completed-only")
-    listElement.classList.remove("active-only")
-}
-
-function showActive() {
-    listElement.classList.remove("completed-only")
-    listElement.classList.add("active-only")
-}
-
-function showCompleted() {
-    listElement.classList.add("completed-only")
-    listElement.classList.remove("active-only")
-}
-
 function displayItems(type) {
     switch (type) {
         case 'active':
@@ -151,4 +136,10 @@ function displayItems(type) {
             listElement.classList.remove("active-only")
             break;
     }
+}
+
+function clearNewItem(){
+    txtItemElement.value = "";
+    switchNewItem(false);
+    txtItemElement.focus()
 }
