@@ -34,7 +34,7 @@ loadData();
 function displayListItems() {
     let text = "";
     for (let i = 0; i < listItems.length; i++) {
-        text += `<li class='item ${listItems[i].checked ? "checked" : ""}'><div ` + (listItems[i].checked ? "" : `onclick="completeItem(${i})"`) + `><i class="fa fa-check"></i>
+        text += `<li class='item ${listItems[i].checked ? "checked" : "unchecked"}'><div onclick="completeItem(${i})"><i class="fa fa-check"></i>
                 </div><span>${listItems[i].item}</span> <i class="fa fa-times" onclick='remove(${i})'></i></li>`;
     }
     listElement.innerHTML = text;
@@ -106,7 +106,7 @@ function inputItem(event) {
 function completeItem(index) {
     if (index >= 0 && index < listItems.length) {
         const item = listItems[index];
-        item.checked = true;
+        item.checked = !item.checked;
         displayListItems();
     }
 }
@@ -119,4 +119,36 @@ function switchLightDark(value = null) {
 
     document.body.style.colorScheme = isDark ? "dark" : "light"
     localStorage.setItem("dark-mode", (isDark ? 2 : 1))
+}
+
+function showAll() {
+    listElement.classList.remove("completed-only")
+    listElement.classList.remove("active-only")
+}
+
+function showActive() {
+    listElement.classList.remove("completed-only")
+    listElement.classList.add("active-only")
+}
+
+function showCompleted() {
+    listElement.classList.add("completed-only")
+    listElement.classList.remove("active-only")
+}
+
+function displayItems(type) {
+    switch (type) {
+        case 'active':
+            listElement.classList.remove("completed-only")
+            listElement.classList.add("active-only")
+            break;
+        case 'completed':
+            listElement.classList.add("completed-only")
+            listElement.classList.remove("active-only")
+            break;
+        default:
+            listElement.classList.remove("completed-only")
+            listElement.classList.remove("active-only")
+            break;
+    }
 }

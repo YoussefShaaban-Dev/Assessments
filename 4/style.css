@@ -131,6 +131,10 @@ i.fa {
     transition: var(--trans);
 }
 
+i.fa-times {
+    color: crimson;
+}
+
 i.fa-times:hover {
     transform: scale(1.1);
     text-shadow: 0px 0px 2px #1f1f1f;
@@ -175,7 +179,7 @@ li.item.checked div i {
 
 .items-list {
     padding-inline-start: 0;
-    max-height: min(40vh, 300px);
+    max-height: 40vh;
     overflow: auto;
 }
 
@@ -189,11 +193,6 @@ li.item span {
 
 li.item.checked span {
     text-decoration: line-through;
-}
-
-li.item.checked div,
-li.item.checked div i {
-    cursor: default;
 }
 
 li.item {
@@ -212,7 +211,6 @@ li.item:last-child {
 
 li.item>i {
     opacity: 0;
-    transition: var(--trans);
 }
 
 li.item:hover>i {
@@ -233,4 +231,22 @@ li.item:hover>i {
     main {
         margin-top: max(-50vh, -350px);
     }
+
+    .items-list {
+        max-height: 50vh;
+    }
+}
+
+.completed-only li.unchecked {
+    opacity: 0;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.active-only li.checked {
+    opacity: 0;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }

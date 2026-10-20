@@ -31,9 +31,12 @@
             </div>
 
             <div class="light-dark panel items">
-                <ul id="list" class="items-list"></ul>
+                <ul id="list" class="items-list active-only"></ul>
                 <div class="d-flex">
                     <button onclick="clearAll()">Clear All</button>
+                    <button onclick="displayItems('all')">All</button>
+                    <button onclick="displayItems('active')">Active</button>
+                    <button onclick="displayItems('completed')">Completed</button>
                 </div>
                 <p id="message"></p>
             </div>
