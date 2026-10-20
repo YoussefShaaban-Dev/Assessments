@@ -2,6 +2,7 @@ const listElement = document.getElementById("list")
 const messageElement = document.getElementById("message")
 const txtItemElement = document.getElementById("txtItem")
 const newItemCheckElement = document.getElementById("newItemCheck");
+const leftCountElement = document.getElementById("leftCount");
 var listItems = [];
 var newItemChecked = false;
 let isDark = false;
@@ -39,6 +40,7 @@ function displayListItems() {
     }
     listElement.innerHTML = text;
     localStorage.setItem("ToDoList", JSON.stringify(listItems))
+    leftCountElement.innerHTML = listItems.filter((x) => !x.checked).length
 }
 
 function showMessage(text) {
@@ -124,22 +126,30 @@ function switchLightDark(value = null) {
 function displayItems(type) {
     switch (type) {
         case 'active':
-            listElement.classList.remove("completed-only")
+            listElement.classList.remove("all-items");
+            listElement.classList.remove("completed-only");
             listElement.classList.add("active-only")
             break;
         case 'completed':
+            listElement.classList.remove("all-items");
             listElement.classList.add("completed-only")
             listElement.classList.remove("active-only")
             break;
         default:
+            listElement.classList.add("all-items");
             listElement.classList.remove("completed-only")
             listElement.classList.remove("active-only")
             break;
     }
 }
 
-function clearNewItem(){
+function clearNewItem() {
     txtItemElement.value = "";
     switchNewItem(false);
     txtItemElement.focus()
+}
+
+function clearCompleted() {
+    listItems = listItems.filter((x) => !x.checked);
+    displayListItems();
 }

@@ -32,16 +32,24 @@
 
             <div class="light-dark panel items">
                 <ul id="list" class="items-list active-only"></ul>
-                <div class="d-flex">
-                    <button onclick="clearAll()">Clear All</button>
-                    <button onclick="displayItems('all')">All</button>
-                    <button onclick="displayItems('active')">Active</button>
-                    <button onclick="displayItems('completed')">Completed</button>
+                <div class="footer">
+                    <div>
+                        <span id="leftCount"></span> items left
+                    </div>
+                    <div>
+                        <button class="btn2 btn-filter all" onclick="displayItems('all')">All</button>
+                        <button class="btn2 btn-filter active" onclick="displayItems('active')">Active</button>
+                        <button class="btn2 btn-filter completed" onclick="displayItems('completed')">Completed</button>
+                    </div>
+                    <div>
+                        <button class="btn2 btn-clear" onclick="clearCompleted()">Clear Completed</button>
+                        <button class="btn2 btn-clear" onclick="clearAll()">Clear All</button>
+                    </div>
                 </div>
-                <p id="message"></p>
             </div>
         </div>
     </main>
+    <p id="message"></p>
     <script src="script.js" defer></script>
 </body>
 

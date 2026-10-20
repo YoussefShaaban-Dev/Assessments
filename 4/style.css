@@ -89,7 +89,7 @@ main {
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0px 0px 10px #00000054;
-    min-width: 500px;
+    min-width: 600px;
 }
 
 .item {
@@ -100,10 +100,6 @@ main {
 
 .panel:first-child {
     width: strich;
-}
-
-#message {
-    color: crimson;
 }
 
 input[type=text] {
@@ -235,16 +231,27 @@ li.item:hover>i {
     .items-list {
         max-height: 45vh;
     }
-    .header-title{
+
+    .header-title {
         padding-inline: 20px;
     }
-    .title{
+
+    .title {
         font-size: 3rem;
     }
-    .lightdark-icon{
+
+    .lightdark-icon {
         transform: scale(0.8);
     }
 }
+
+.footer {
+    display: grid;
+    grid-template-columns: auto auto max-content;
+    align-items: center;
+    
+}
+
 
 .completed-only li.unchecked {
     opacity: 0;
@@ -258,4 +265,33 @@ li.item:hover>i {
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.btn2 {
+    cursor: pointer;
+    border: none;
+    padding: 8px 5px;
+    border-radius: 5px;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+
+}
+
+.active-only+div .active {
+    color: #c444ff;
+}
+
+.completed-only+div .completed {
+    color: #c444ff;
+}
+
+.all-items+div .all {
+    color: #c444ff;
+}
+
+.btn-clear {
+    color: crimson;
+}
+
+.items-list+div {
+    padding-inline: 10px;
 }
