@@ -136,8 +136,9 @@ i.fa-times:hover {
     text-shadow: 0px 0px 2px #1f1f1f;
 }
 
-.btn-check, li.item div{
-    border: solid 1px light-dark(var(--light-b-color),var(--dark-b-color));
+.btn-check,
+li.item div {
+    border: solid 1px light-dark(var(--light-b-color), var(--dark-b-color));
     border-radius: 50px;
     align-content: center;
     padding: 2px;
@@ -147,77 +148,89 @@ i.fa-times:hover {
     width: fit-content;
 }
 
-.btn.btn-check:hover{
+.btn.btn-check:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 5px #1f1f1f73;
 }
 
-.btn-check i , li.item div i{
+.btn-check i,
+li.item div i {
     font-size: 1rem;
     color: #eee;
     opacity: 0;
 }
 
-.btn-check.checked, li.item.checked div{
+.btn-check.checked,
+li.item.checked div {
     border: none;
     background-image: var(--grad);
     margin: 1px;
 }
 
 
-.btn-check.checked i, li.item.checked div i{
+.btn-check.checked i,
+li.item.checked div i {
     opacity: 1;
 }
 
-.items-list{
+.items-list {
     padding-inline-start: 0;
-    max-height: min(40vh,300px);
+    max-height: min(40vh, 300px);
     overflow: auto;
 }
 
-li.item .btn-check{
+li.item .btn-check {
     transform: scale(0.9);
 }
-li.item span{
+
+li.item span {
     margin-inline-start: 5px;
 }
-li.item.checked span{
+
+li.item.checked span {
     text-decoration: line-through;
 }
-li.item.checked div, li.item.checked div i{
+
+li.item.checked div,
+li.item.checked div i {
     cursor: default;
 }
 
-li.item{
+li.item {
     padding: 10px 20px;
-    border-bottom: solid 1px light-dark(var(--light-b-color),var(--dark-b-color));
+    border-bottom: solid 1px light-dark(var(--light-b-color), var(--dark-b-color));
     transition: var(--trans);
 }
 
-li.item:last-child{
+li.item:last-child {
     border: none;
 }
 
-.panel.items{
+.panel.items {
     padding-inline: 0;
 }
 
-li.item > i{
+li.item>i {
     opacity: 0;
     transition: var(--trans);
 }
 
-li.item:hover > i{
+li.item:hover>i {
     opacity: 1;
 }
 
 @media (max-width: 600px) {
-    .panel{
+    .panel {
         min-width: 80vw;
         width: stretch;
         margin-inline: 15px;
     }
-    input[type=text]{
+
+    input[type=text] {
         min-width: 60vw;
+    }
+
+    main {
+        margin-top: max(-50vh, -350px);
     }
 }
