@@ -4,18 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Counter</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="..\assets\font-awesome-4.7.0\css\font-awesome.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>To-Do List</h1>
-    <div>
-        <input id="txtItem" type="text" placeholder="To-Do Item" />
-        <input id="btnAdd" type="button" onclick="addItem()" value="Add" />
-    </div>
-    <ul id="list"></ul>
-    <button onclick="clearAll()">Clear All</button>
-    <p id="message"></p>
+    <header>
+        <img class="bg-img" src="assets/bg.jpg" />
+        <div class="bg-grd"></div>
+    </header>
+
+    <main>
+        <div>
+            <div class="d-flex v-center s-between">
+                <h1 class="title">To Do</h1>
+                <i class="fa fa-moon-o lightdark-icon"></i>
+            </div>
+
+            <div class="light-dark panel mb-10 item">
+                <div id="newItemCheck" class="btn-check btn" onclick="switchNewItem()">
+                    <i class="fa fa-check"></i>
+                </div>
+                <input id="txtItem" type="text" placeholder="To-Do Item" />
+                <i class="fa fa-times"></i>
+            </div>
+
+            <div class="light-dark panel items">
+                <ul id="list" class="items-list"></ul>
+                <button onclick="clearAll()">Clear All</button>
+                <p id="message"></p>
+            </div>
+        </div>
+    </main>
     <script src="script.js" defer></script>
 </body>
 
