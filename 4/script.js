@@ -2,18 +2,32 @@ const listElement = document.getElementById("list")
 const messageElement = document.getElementById("message")
 const txtItemElement = document.getElementById("txtItem")
 const newItemCheckElement = document.getElementById("newItemCheck");
-txtItemElement.addEventListener("keydown", function (event) {
-    if (event.code == "Enter")
-        addItem()
-});
 var listItems = [];
 var newItemChecked = false;
+let isDark = false;
 loadData();
+
+(function () {
+    txtItemElement.addEventListener("keydown", function (event) {
+        if (event.code == "Enter")
+            addItem()
+
+        alert(event.code)
+    });
+
+    const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    if (darkModeMql && darkModeMql.matches) {
+        isDark = true;
+    } else {
+        isDark = false
+    }
+
+})()
 
 function displayListItems() {
     let text = "";
     for (let i = 0; i < listItems.length; i++) {
-        text += `<li class='item ${listItems[i].checked?"checked":""}'><div `+ (listItems[i].checked?"":`onclick="completeItem(${i})"`) +`><i class="fa fa-check"></i>
+        text += `<li class='item ${listItems[i].checked ? "checked" : ""}'><div ` + (listItems[i].checked ? "" : `onclick="completeItem(${i})"`) + `><i class="fa fa-check"></i>
                 </div><span>${listItems[i].item}</span> <i class="fa fa-times" onclick='remove(${i})'></i></li>`;
     }
     listElement.innerHTML = text;
@@ -82,8 +96,8 @@ function inputItem(event) {
     console.log(event)
 }
 
-function completeItem(index){
-    if(index >= 0 && index < listItems.length){
+function completeItem(index) {
+    if (index >= 0 && index < listItems.length) {
         const item = listItems[index];
         item.checked = true;
         displayListItems();

@@ -19,7 +19,7 @@
         <div>
             <div class="d-flex v-center s-between">
                 <h1 class="title">To Do</h1>
-                <i class="fa fa-moon-o lightdark-icon"></i>
+                <i class="fa fa-moon-o lightdark-icon" onclick="switchLightDark()"></i>
             </div>
 
             <div class="light-dark panel mb-10 item">
@@ -32,7 +32,9 @@
 
             <div class="light-dark panel items">
                 <ul id="list" class="items-list"></ul>
-                <button onclick="clearAll()">Clear All</button>
+                <div>
+                    <button onclick="clearAll()">Clear All</button>
+                </div>
                 <p id="message"></p>
             </div>
         </div>
