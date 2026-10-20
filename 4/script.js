@@ -8,11 +8,11 @@ let isDark = false;
 loadData();
 
 (function () {
-    txtItemElement.addEventListener("keydown", function (event) {
-        if (event.code == "Enter")
+    txtItemElement.addEventListener('beforeinput', function (event) {
+        if (event.inputType === 'insertLineBreak') {
+            event.preventDefault();
             addItem()
-
-        alert(JSON.stringify(event))
+        }
     });
 
     /* Get Dark mode */
@@ -118,5 +118,5 @@ function switchLightDark(value = null) {
         isDark = !isDark;
 
     document.body.style.colorScheme = isDark ? "dark" : "light"
-    localStorage.setItem("dark-mode", (isDark?2:1))
+    localStorage.setItem("dark-mode", (isDark ? 2 : 1))
 }
