@@ -213,6 +213,78 @@ li.item:hover>i {
     opacity: 1;
 }
 
+.footer {
+    display: grid;
+    grid-template-columns: auto auto max-content;
+    align-items: center;
+}
+
+
+.completed-only li.unchecked {
+    opacity: 0;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.active-only li.checked {
+    opacity: 0;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.btn2 {
+    cursor: pointer;
+    border: none;
+    padding: 8px 5px;
+    border-radius: 5px;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+    transition: var(--trans);
+    position: relative;
+}
+
+.btn2:hover {
+    color: #c444ff;
+}
+
+.btn2::after{
+    content: "";
+    transition: var(--trans);
+    background-color: #c444ff;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: var(--trans);
+}
+
+.btn2:hover::after{
+    width: 100%;
+}
+
+.active-only+div .active {
+    color: #c444ff;
+}
+
+.completed-only+div .completed {
+    color: #c444ff;
+}
+
+.all-items+div .all {
+    color: #c444ff;
+}
+
+.btn-clear {
+    color: crimson;
+}
+
+.items-list+div {
+    padding-inline: 10px;
+}
+
+
 @media (max-width: 600px) {
     .panel {
         min-width: 80vw;
@@ -243,55 +315,22 @@ li.item:hover>i {
     .lightdark-icon {
         transform: scale(0.8);
     }
-}
 
-.footer {
-    display: grid;
-    grid-template-columns: auto auto max-content;
-    align-items: center;
-    
-}
+    .footer {
+        display: block;
+    }
 
+    .footer div {
+        display: flex;
+        justify-content: center;
+    }
 
-.completed-only li.unchecked {
-    opacity: 0;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+    .btn2 {
+        width: stretch;
+        margin: 10px;
+    }
 
-.active-only li.checked {
-    opacity: 0;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.btn2 {
-    cursor: pointer;
-    border: none;
-    padding: 8px 5px;
-    border-radius: 5px;
-    background-color: light-dark(var(--light-bg), var(--dark-bg));
-
-}
-
-.active-only+div .active {
-    color: #c444ff;
-}
-
-.completed-only+div .completed {
-    color: #c444ff;
-}
-
-.all-items+div .all {
-    color: #c444ff;
-}
-
-.btn-clear {
-    color: crimson;
-}
-
-.items-list+div {
-    padding-inline: 10px;
+    .footer div:first-child {
+        font-size: 1.5rem;
+    }
 }
