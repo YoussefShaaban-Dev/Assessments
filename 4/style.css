@@ -235,6 +235,15 @@ li.item:hover>i {
     .items-list {
         max-height: 45vh;
     }
+    .header-title{
+        padding-inline: 20px;
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .lightdark-icon{
+        transform: scale(0.8);
+    }
 }
 
 .completed-only li.unchecked {
